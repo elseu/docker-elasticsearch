@@ -12,7 +12,7 @@ Ready to use, lean and highly configurable Elasticsearch container image.
 
 * Alpine Linux 3.9
 * OpenJDK JRE 8u191
-* Elasticsearch 6.5.0
+* Elasticsearch 6.6.0
 
 **Note:** `x-pack-ml` module is forcibly disabled as it's not supported on Alpine Linux.
 
@@ -29,7 +29,7 @@ docker run --name elasticsearch \
 	--detach \
 	--privileged \
 	--volume /path/to/data_folder:/data \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 
 Ready to use node for cluster `myclustername`:
@@ -39,7 +39,7 @@ docker run --name elasticsearch \
 	--privileged \
 	--volume /path/to/data_folder:/data \
 	-e CLUSTER_NAME=myclustername \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 
 Ready to use node for cluster `elasticsearch-default`, with 8GB heap allocated to Elasticsearch:
@@ -49,7 +49,7 @@ docker run --name elasticsearch \
 	--privileged \
 	--volume /path/to/data_folder:/data \
 	-e ES_JAVA_OPTS="-Xms8g -Xmx8g" \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 
 Ready to use node with plugins (x-pack and repository-gcs) pre installed. Already installed plugins are ignored:
@@ -60,7 +60,7 @@ docker run --name elasticsearch \
 	--volume /path/to/data_folder:/data \
 	-e ES_JAVA_OPTS="-Xms8g -Xmx8g" \
 	-e ES_PLUGINS_INSTALL="repository-gcs,x-pack" \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 
 **Master-only** node for cluster `elasticsearch-default`:
@@ -71,7 +71,7 @@ docker run --name elasticsearch \
 	--volume /path/to/data_folder:/data \
 	-e NODE_DATA=false \
 	-e HTTP_ENABLE=false \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 
 **Data-only** node for cluster `elasticsearch-default`:
@@ -81,7 +81,7 @@ docker run --name elasticsearch \
 	--privileged \
 	-e NODE_MASTER=false \
 	-e HTTP_ENABLE=false \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 
 **Data-only** node for cluster `elasticsearch-default` with shard allocation awareness:
@@ -94,7 +94,7 @@ docker run --name elasticsearch \
 	-e HTTP_ENABLE=false \
     -e SHARD_ALLOCATION_AWARENESS=dockerhostname \
     -e SHARD_ALLOCATION_AWARENESS_ATTR="/dockerhost" \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 
 **Client-only** node for cluster `elasticsearch-default`:
@@ -105,7 +105,7 @@ docker run --name elasticsearch \
 	--volume /path/to/data_folder:/data \
 	-e NODE_MASTER=false \
 	-e NODE_DATA=false \
-        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.5.0
+        117533191630.dkr.ecr.eu-west-1.amazonaws.com/upstream-fork/docker-elasticsearch:6.6.0
 ```
 I also make available special images and instructions for [AWS EC2](https://github.com/pires/docker-elasticsearch-aws) and [Kubernetes](https://github.com/pires/docker-elasticsearch-kubernetes).
 
