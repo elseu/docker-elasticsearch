@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1beta1
+kind: Component
+metadata:
+  name: docker-elasticsearch
+  description: "Dockerfile for a base Elasticsearch image to be extended by others (allow to install plug-ins, change configuration, etc.)"
+  annotations:
+    github.com/project-slug: elseu/docker-elasticsearch
+    backstage.io/source-location: url:https://github.com/elseu/docker-elasticsearch/
+  tags:
+    - docker
+spec:
+  type: unspecified
+  owner: team-search
+  lifecycle: unspecified
